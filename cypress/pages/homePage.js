@@ -16,25 +16,41 @@ class homePage {
           .get('[role="menuitem"]')
           .contains('Support Center')
           .invoke('removeAttr', 'target'),
+
       blogLink: () =>
         cy
           .get('[role="menuitem"]')
           .contains('Blog')
           .invoke('removeAttr', 'target'),
+
       globalNumbersLink: () =>
         cy
           .get('[role="menuitem"]')
           .contains('Global Numbers')
           .invoke('removeAttr', 'target'),
+
+      globalCoverageLink: () =>
+        cy
+          .get('[role="menuitem"]')
+          .contains('Global coverage')
+          .invoke('removeAttr', 'target'),
+
       integrationsLink: () =>
         cy
           .get('[role="menuitem"]')
           .contains('Integrations')
           .invoke('removeAttr', 'target'),
+
       microsoftTeamsLink: () =>
         cy
           .get('[role="menuitem"]')
           .contains('Microsoft Teams')
+          .invoke('removeAttr', 'target'),
+
+      IoTSimCardsLink: () =>
+        cy
+          .get('[role="menuitem"]')
+          .contains('IoT SIM Card')
           .invoke('removeAttr', 'target'),
     },
 
@@ -44,6 +60,10 @@ class homePage {
 
       footerLogo: () => cy.get('footer svg > g'),
       releaseNotesLink: () => cy.get('footer a[href="/release-notes"]'),
+
+      // reportAbuseLink: () => cy.get('footer a[href="/report-abuse"]'),
+      telnyxVsTwilioLink: () =>
+        cy.get('footer a[href="/the-better-twilio-alternative"]'),
     },
   }
 
@@ -82,6 +102,14 @@ class homePage {
     this.elements.footer.releaseNotesLink().should('be.visible')
     this.elements.footer.releaseNotesLink().click()
   }
+  // clickOnReportAbuseLink() {
+  //   this.elements.footer.reportAbuseLink().should('be.visible')
+  //   this.elements.footer.reportAbuseLink().click()
+  // }
+  clickOnTelnyxVsTwilioLink() {
+    this.elements.footer.telnyxVsTwilioLink().should('be.visible')
+    this.elements.footer.telnyxVsTwilioLink().click()
+  }
 
   //! sub-navigation
   clickOnSupportCenterLink() {
@@ -96,6 +124,10 @@ class homePage {
     this.elements.subNavigation.globalNumbersLink().should('be.visible')
     this.elements.subNavigation.globalNumbersLink().click()
   }
+  clickOnGlobalCoverageLink() {
+    this.elements.subNavigation.globalCoverageLink().should('be.visible')
+    this.elements.subNavigation.globalCoverageLink().click()
+  }
   clickOnIntegrationsLink() {
     this.elements.subNavigation.integrationsLink().should('be.visible')
     this.elements.subNavigation.integrationsLink().click()
@@ -103,6 +135,10 @@ class homePage {
   clickOnMicrosoftTeamsLink() {
     this.elements.subNavigation.microsoftTeamsLink().should('be.visible')
     this.elements.subNavigation.microsoftTeamsLink().click()
+  }
+  clickOnIoTSimCardsLink() {
+    this.elements.subNavigation.IoTSimCardsLink().should('be.visible')
+    this.elements.subNavigation.IoTSimCardsLink().click()
   }
 }
 

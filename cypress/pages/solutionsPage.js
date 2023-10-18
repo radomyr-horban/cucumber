@@ -11,7 +11,8 @@ class solutionsPage {
 
     filterDropdownBtn: () => cy.get('button[id="department-filter"]'),
     filterDropdownList: () => cy.get('div[role="listbox"]'),
-    filterDropdownListOptions: () => cy.get('div[role="option"] a'),
+    filterDropdownListOptions: () =>
+      cy.get('div[role="listbox"] div[role="option"]'),
   }
 
   clickOnSeeUseCasesLink() {

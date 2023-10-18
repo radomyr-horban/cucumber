@@ -17,28 +17,30 @@ describe('Blog aricle page', () => {
     homePage.clickOnBlogLink()
 
     cy.url().should('include', '/resources')
-    blogPage.elements.heading().should('contain', 'Blog')
     blogPage.elements
-      .subHeading()
-      .should('contain', 'Browse our latest articles and updates')
-    blogPage.elements.filterDropdown().should('be.visible')
+      .heading()
+      .should('contain', 'Browse all articles, guides, and news')
 
-    blogPage.elements.articleCategory().should('be.visible')
-    blogPage.elements.articleTitle().should('be.visible')
+    blogPage.elements.searchInput().should('be.visible')
+    blogPage.elements.articlesSectionHeading().should('be.visible')
 
-    blogPage.clickOnReadArticleLink()
+    //! article
+    blogPage.elements.firstArticleCategory().should('be.visible')
+    blogPage.elements.firstArticleTitle().should('be.visible')
+    blogPage.elements.firstArticleAuthor().should('be.visible')
 
-    blogArticlePage.elements.heading().should('be.visible')
-    blogArticlePage.elements.subHeading().should('be.visible')
+    // blogPage.clickOnFirstArticle()
+    blogPage.clickOnLastArticle()
+
+    //! inside
+    blogArticlePage.elements.backToBlogLink().should('be.visible')
 
     blogArticlePage.elements
-      .articleCategoryAndPublishDate()
+      .categoryAndLastUpdateDate()
       .should('be.visible')
-      .and('contain', 'PUBLISHED')
-    blogArticlePage.elements.authorName().should('be.visible')
-    blogArticlePage.elements.shareOnSocialText().should('be.visible')
+      .and('contain', 'Updated')
 
-    blogArticlePage.clickOnBackToBlogLink()
-    blogPage.elements.heading().should('contain', 'Blog')
+    blogArticlePage.elements.heading().should('be.visible')
+    blogArticlePage.elements.authorName().should('be.visible')
   })
 })

@@ -31,12 +31,24 @@ class microsoftTeamsPage {
     //! Form
     firstNameInput: () => cy.get('input[id="FirstName"]'),
     lastNameInput: () => cy.get('input[id="LastName"]'),
-    companyEmailInput: () => cy.get('input[id="Email"]'),
+    emailInput: () => cy.get('input[id="Email"]'),
     companyWebsiteInput: () => cy.get('input[id="Website"]'),
     operatorSelect: () => cy.get('select[id="Form_Operator_Connect_Seats__c"]'),
     submitBtn: () => cy.get('button[type="submit"]'),
+
+    //! Error
+    errorAlert: () => cy.get('div.mktoError'),
   }
-  //! click
+
+  isErrorAlertDisplayed(inputField) {
+    const inputId = inputField.invoke('attr', 'id')
+
+    return inputId.then((id) => {
+      return cy.get(`input[id="${id}"]+div.mktoError`).should('be.visible')
+    })
+  }
+
+  //! clickers
   clickOnFirstNameInput() {
     this.elements.firstNameInput().click()
   }
@@ -45,8 +57,8 @@ class microsoftTeamsPage {
     this.elements.lastNameInput().click()
   }
 
-  clickOnCompanyEmailInput() {
-    this.elements.companyEmailInput().click()
+  clickOnEmailInput() {
+    this.elements.emailInput().click()
   }
 
   clickOnCompanyWebsiteInput() {
@@ -66,8 +78,9 @@ class microsoftTeamsPage {
     this.elements.lastNameInput().type(value)
   }
 
-  setCompanyEmailInput(value) {
-    this.elements.companyEmailInput().type(value)
+  setEmailInput(value) {
+    this.elements.emailInput().clear()
+    this.elements.emailInput().type(value) //! remove old results
   }
 
   setCompanyWebsiteInput(value) {
@@ -76,6 +89,24 @@ class microsoftTeamsPage {
 
   selectOperator(value) {
     this.elements.operatorSelect().select(value)
+  }
+
+  fillForm(userData) {
+    this.clickOnFirstNameInput()
+    this.setFirstNameInput(userData.firstName)
+
+    this.clickOnLastNameInput()
+    this.setLastNameInput(userData.lastName)
+
+    this.clickOnEmailInput()
+    this.setEmailInput(userData.email)
+
+    this.clickOnCompanyWebsiteInput()
+    this.setCompanyWebsiteInput(userData.website)
+
+    this.selectOperator('0-50')
+
+    this.clickOnSubmitBtn()
   }
 }
 

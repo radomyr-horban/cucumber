@@ -44,16 +44,11 @@ describe('Solutions page', () => {
     solutionsPage.clickOnFilterDropdownBtn()
     solutionsPage.elements.filterDropdownList().should('be.visible')
 
-    solutionsPage.elements.filterDropdownListOptions().each((option) => {
-      let currentOptionName = option.text().trim()
-      let currentOptionHref = option.attr('href')
-
-      cy.fixture('solutionsPage.fixture').then((data) => {
-        cy.wrap(currentOptionHref).should(
-          'contain',
-          data[`${currentOptionName}`]
-        )
-      })
+    cy.fixture('solutionsPage.fixture').then((data) => {
+      cy.verifyListItemsWithTitlesArray(
+        solutionsPage.elements.filterDropdownListOptions(),
+        data.options
+      )
     })
   })
 })

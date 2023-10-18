@@ -49,7 +49,7 @@ class numbersPricingPage {
   }
 
   selectCountryOption(value) {
-    cy.get('button[id="country-filter"]+div div[role="option"] a')
+    cy.get('button[id="country-filter"]+div div[role="option"]')
       .contains(`${value}`)
       .click()
   }

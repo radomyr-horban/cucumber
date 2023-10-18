@@ -1,7 +1,5 @@
 // / <reference types="cypress" />
 
-import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
-
 import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
 
 import homePage from '../../pages/homePage'
@@ -17,26 +15,22 @@ describe('Blog page', () => {
     homePage.clickOnResourcesLink()
     homePage.clickOnBlogLink()
 
-    cy.url().should('include', 'resources')
-    blogPage.elements.heading().should('contain', 'Blog')
+    cy.url().should('include', '/resources')
     blogPage.elements
-      .subHeading()
-      .should('contain', 'Browse our latest articles and updates')
+      .heading()
+      .should('contain', 'Browse all articles, guides, and news')
 
-    blogPage.clickOnFilterDropdown()
-    blogPage.elements.filterDropdownList().should('be.visible')
+    blogPage.elements.searchInput().should('be.visible')
+    blogPage.elements
+      .articlesSectionHeading()
+      .should('be.visible')
+      .and('contain', 'View all articles')
 
-    blogPage.elements.filterDropdownListOptions().each((option) => {
-      let currentOptionName = option.text().trim()
-      let currentOptionHref = option.attr('href')
+    blogPage.clickOnFirstProductFilterOption()
+    cy.url().should('include', 'topic/voice')
 
-      cy.fixture('blogPage.fixture').then((data) => {
-        cy.wrap(currentOptionHref).should(
-          'contain',
-          data[`${currentOptionName}`]
-        )
-      })
-    })
+    blogPage.clickOnFirstFirstContentTypeFilterOption()
+    cy.url().should('include', 'category=partnerships')
   })
 
   it('6. should display pagination', () => {
@@ -44,16 +38,21 @@ describe('Blog page', () => {
     homePage.clickOnBlogLink()
 
     cy.url().should('include', '/resources')
-    blogPage.elements.heading().should('contain', 'Blog')
     blogPage.elements
-      .subHeading()
-      .should('contain', 'Browse our latest articles and updates')
+      .heading()
+      .should('contain', 'Browse all articles, guides, and news')
+
+    blogPage.elements.searchInput().should('be.visible')
+    blogPage.elements
+      .articlesSectionHeading()
+      .should('be.visible')
+      .and('contain', 'View all articles')
 
     blogPage.elements.paginationNav().should('be.visible')
     blogPage.clickOnNextPageBtn()
 
     cy.url().should('include', '/page/2')
-    blogPage.elements.heading().should('contain', 'Page 2')
-    blogPage.elements.subHeading().should('contain', '(2)')
+
+    blogPage.elements.articlesSectionHeading().should('contain', '(2)')
   })
 })
