@@ -123,10 +123,12 @@ class homePage {
     this.elements.footer.releaseNotesLink().should('be.visible')
     this.elements.footer.releaseNotesLink().click()
   }
+
   // clickOnReportAbuseLink() {
   //   this.elements.footer.reportAbuseLink().should('be.visible')
   //   this.elements.footer.reportAbuseLink().click()
   // }
+
   clickOnTelnyxVsTwilioLink() {
     this.elements.footer.telnyxVsTwilioLink().should('be.visible')
     this.elements.footer.telnyxVsTwilioLink().click()
