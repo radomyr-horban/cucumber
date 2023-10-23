@@ -1,17 +1,27 @@
 import { When, Then, Given } from '@badeball/cypress-cucumber-preprocessor'
 
+import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
+
 import homePage from '../../pages/homePage'
 import blogPage from '../../pages/blogPage'
-import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
+import microsoftTeamsPage from '../../pages/microsoftTeamsPage'
+import thankYouPage from '../../pages/thankYouPage'
 
 const pageMap = {
   homePage: homePage,
   blogPage: blogPage,
+  microsoftTeamsPage: microsoftTeamsPage,
+  thankYouPage: thankYouPage,
 }
 
 //! general
-Then('The {string} text is displayed in the URL', () => {
-  cy.url().should('include', '/resources')
+Given('I am on home page', () => {
+  cy.visit('/')
+  acceptCookiesHelper()
+})
+
+Then('The {string} text is displayed in the URL', (url) => {
+  cy.url().should('include', url)
 })
 
 //! Home page
@@ -19,8 +29,8 @@ Then('The {string} text is displayed in the URL', () => {
 When('I click on the {string} link in the header', (link) => {
   homePage.clickOnMenuLink(link)
 })
-Then('The {string} link is displayed in the opened dropdown menu', () => {
-  homePage.elements.subNavigation.blogLink().should('be.visible')
+Then('The {string} link is displayed in the opened dropdown menu', (link) => {
+  homePage.isSubmenuLinkVisible(link)
 })
 When('I click on the {string} link in the opened dropdown menu', (link) => {
   homePage.clickOnSubmenuLink(link)
@@ -59,3 +69,6 @@ Then(
     }
   }
 )
+
+//? escape integer
+//The "View \\({int})" section

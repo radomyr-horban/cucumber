@@ -74,6 +74,9 @@ class homePage {
   clickOnMenuLink(link) {
     cy.get('nav').contains(link).click()
   }
+  isSubmenuLinkVisible(link) {
+    cy.get('[role="menuitem"]').contains(link).should('be.visible')
+  }
   clickOnSubmenuLink(link) {
     cy.get('[role="menuitem"]')
       .contains(link)

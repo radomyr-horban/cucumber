@@ -31,9 +31,7 @@ Feature: Blog page
     And The "Search" input is displayed on the page
     And The "View all articles" section heading is displayed on the "blogPage"
     And The pagination is displayed at the end of the page
-
-    #! 
-    When I click on the "nextPageBtn"
-    #! 
+ 
+    When I click on the "nextPageBtn" 
     Then The "/page/2" text is displayed in the URL
     And The "View all articles (2)" section heading is displayed on the "blogPage"

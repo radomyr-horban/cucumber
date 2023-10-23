@@ -1,14 +1,6 @@
-import { When, Then, Given } from '@badeball/cypress-cucumber-preprocessor'
+import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
-import homePage from '../../pages/homePage'
 import blogPage from '../../pages/blogPage'
-import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
-
-//! Background
-Given('I am on home page', () => {
-  cy.visit('/')
-  acceptCookiesHelper()
-})
 
 //! Scenario: Sorting functionality
 Then('The "Search" input is displayed on the page', () => {
@@ -39,6 +31,3 @@ When(
 When('I click on the {string}', (btnName) => {
   blogPage.elements[btnName]().click()
 })
-
-//? escape integer
-//The "View \\({int})" section
