@@ -13,7 +13,6 @@ Feature: Solutions page
 
     When I click on the “See use cases” link
     Then The “USE CASES” section title is visible on the page
-    # Then The "USE CASES" section heading is displayed on the "solutionsPage"
     Then The "#use-cases" text is displayed in the URL
     
     #!
