@@ -1,16 +1,35 @@
 import { When, Then, Given } from '@badeball/cypress-cucumber-preprocessor'
 
 import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
+import { generateUserData } from '../../helpers/generateUserData.helper'
 
-import homePage from '../../pages/homePage'
+// import blogArticlePage from '../../pages/blogArticlePage'
 import blogPage from '../../pages/blogPage'
+import globalCoveragePage from '../../pages/globalCoveragePage'
+import homePage from '../../pages/homePage'
 import microsoftTeamsPage from '../../pages/microsoftTeamsPage'
 import thankYouPage from '../../pages/thankYouPage'
+import integrationsPage from '../../pages/integrationsPage'
+import numbersPricingPage from '../../pages/numbersPricingPage'
+import solutionsPage from '../../pages/solutionsPage'
+import releaseNotesPage from '../../pages/releaseNotesPage'
+import supportCenterPage from '../../pages/supportCenterPage'
+import telnyxVsTwilioPage from '../../pages/telnyxVsTwilioPage'
+import IoTSimCardsPage from '../../pages/IoTSimCardsPage'
 
 const pageMap = {
-  homePage: homePage,
+  // blogArticlePage: blogArticlePage,
   blogPage: blogPage,
+  globalCoveragePage: globalCoveragePage,
+  homePage: homePage,
+  integrationsPage: integrationsPage,
+  IoTSimCardsPage: IoTSimCardsPage,
   microsoftTeamsPage: microsoftTeamsPage,
+  numbersPricingPage: numbersPricingPage,
+  releaseNotesPage: releaseNotesPage,
+  solutionsPage: solutionsPage,
+  supportCenterPage: supportCenterPage,
+  telnyxVsTwilioPage: telnyxVsTwilioPage,
   thankYouPage: thankYouPage,
 }
 
@@ -67,6 +86,41 @@ Then(
     } else {
       throw new Error(`Page '${pageName}' not found.`)
     }
+  }
+)
+
+Then(
+  'The description text is displayed under the heading on the {string}',
+  (pageName) => {
+    const resolvedPage = pageMap[pageName]
+
+    if (resolvedPage) {
+      resolvedPage.elements.heroOverviewText().should('be.visible')
+    } else {
+      throw new Error(`Page '${pageName}' not found.`)
+    }
+
+    // microsoftTeamsPage.elements.heroOverviewText().should('be.visible')
+  }
+)
+
+//! Form
+When('I fill in the form with valid data on the {string}', (pageName) => {
+  const resolvedPage = pageMap[pageName]
+
+  const userData = generateUserData()
+  resolvedPage.fillForm(userData)
+})
+
+Then(
+  'An error message is displayed under the {string} input field on the {string}',
+  (inputName, pageName) => {
+    const resolvedPage = pageMap[pageName]
+    const inputId = resolvedPage.elements[inputName]().invoke('attr', 'id')
+
+    return inputId.then((id) => {
+      return cy.get(`input[id="${id}"]+div.mktoError`).should('be.visible')
+    })
   }
 )
 

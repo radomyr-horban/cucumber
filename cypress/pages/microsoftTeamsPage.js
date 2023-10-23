@@ -40,20 +40,14 @@ class microsoftTeamsPage {
     errorAlert: () => cy.get('div.mktoError'),
   }
 
-  isErrorAlertDisplayed(inputName) {
-    // const inputId = inputName.invoke('attr', 'id')
-    const inputId = this.elements[inputName]().invoke('attr', 'id')
+  // isErrorAlertDisplayed(inputName) {
+  //   // const inputId = inputName.invoke('attr', 'id')
+  //   const inputId = this.elements[inputName]().invoke('attr', 'id')
 
-    return inputId.then((id) => {
-      return cy.get(`input[id="${id}"]+div.mktoError`).should('be.visible')
-      //   return cy
-      //     .get(`input[id="${id}"]+div.mktoError`)
-      //     .invoke('text')
-      //     .then((text) => {
-      //       expect(text.trim()).not.to.equal('')
-      //     })
-    })
-  }
+  //   return inputId.then((id) => {
+  //     return cy.get(`input[id="${id}"]+div.mktoError`).should('be.visible')
+  //   })
+  // }
   setInput(inputName, value) {
     this.elements[inputName]().clear()
     this.elements[inputName]().type(value)
