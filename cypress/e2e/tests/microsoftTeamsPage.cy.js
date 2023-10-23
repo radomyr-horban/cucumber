@@ -26,7 +26,7 @@ describe('Microsoft Teams page', () => {
     microsoftTeamsPage.elements.talkToExpertBtn().should('be.visible')
     microsoftTeamsPage.elements.getStartedLink().should('be.visible')
 
-    microsoftTeamsPage.elements.formSectionHeading().should('be.visible')
+    microsoftTeamsPage.elements.sectionHeading().should('be.visible')
     microsoftTeamsPage.elements.formSectionDescription().should('be.visible')
     microsoftTeamsPage.elements.formBox().should('be.visible')
 
@@ -52,7 +52,7 @@ describe('Microsoft Teams page', () => {
     microsoftTeamsPage.elements.talkToExpertBtn().should('be.visible')
     microsoftTeamsPage.elements.getStartedLink().should('be.visible')
 
-    microsoftTeamsPage.elements.formSectionHeading().should('be.visible')
+    microsoftTeamsPage.elements.sectionHeading().should('be.visible')
     microsoftTeamsPage.elements.formSectionDescription().should('be.visible')
     microsoftTeamsPage.elements.formBox().should('be.visible')
 

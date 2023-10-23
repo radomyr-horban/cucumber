@@ -8,8 +8,7 @@ class IoTSimCardsPage {
       ),
 
     //! Pricing Section
-    calculatorSectionHeading: () =>
-      cy.get('section[id="iot-sim-card-calculator"] h2'),
+    sectionHeading: () => cy.get('section[id="iot-sim-card-calculator"] h2'),
     calculatorSectionQuiz: () =>
       cy.get('section[id="iot-sim-card-calculator"] > div > div').last(),
     currentQuestionNumber: () =>

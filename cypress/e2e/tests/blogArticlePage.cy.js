@@ -22,12 +22,12 @@ describe('Blog aricle page', () => {
       .should('contain', 'Browse all articles, guides, and news')
 
     blogPage.elements.searchInput().should('be.visible')
-    blogPage.elements.articlesSectionHeading().should('be.visible')
+    blogPage.elements.sectionHeading().should('be.visible')
 
     //! article
-    blogPage.elements.firstArticleCategory().should('be.visible')
-    blogPage.elements.firstArticleTitle().should('be.visible')
-    blogPage.elements.firstArticleAuthor().should('be.visible')
+    blogPage.elements.articleCategory().should('be.visible')
+    blogPage.elements.articleTitle().should('be.visible')
+    blogPage.elements.articleAuthor().should('be.visible')
 
     // blogPage.clickOnFirstArticle()
     blogPage.clickOnLastArticle()

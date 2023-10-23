@@ -12,12 +12,12 @@ class releaseNotesPage {
 
     //! pagination
     paginationNav: () => cy.get('nav[aria-label="pagination"]'),
-    nextPageLink: () => cy.get('svg[aria-describedby="go-to-next-page"]'),
-    previousPageLink: () =>
+    nextPageBtn: () => cy.get('svg[aria-describedby="go-to-next-page"]'),
+    previousPageBtn: () =>
       cy.get('svg[aria-describedby="go-to-previous-page"]'),
 
-    nextPageLinkTitle: () => cy.get('title[id="go-to-next-page"]'),
-    previousPageLinkTitle: () => cy.get('title[id="go-to-previous-page"]'),
+    nextPageBtnTitle: () => cy.get('title[id="go-to-next-page"]'),
+    previousPageBtnTitle: () => cy.get('title[id="go-to-previous-page"]'),
 
     //! current page number
     currentPageNumber: () =>
@@ -33,15 +33,15 @@ class releaseNotesPage {
   }
 
   //! pagination
-  clickOnNextPageLink() {
-    this.elements.nextPageLinkTitle().should('have.text', 'Go to next page')
-    this.elements.nextPageLink().click()
+  clickOnnextPageBtn() {
+    this.elements.nextPageBtnTitle().should('have.text', 'Go to next page')
+    this.elements.nextPageBtn().click()
   }
-  clickOnPreviousPageLink() {
+  clickOnpreviousPageBtn() {
     this.elements
-      .previousPageLinkTitle()
+      .previousPageBtnTitle()
       .should('have.text', 'Go to previous page')
-    this.elements.previousPageLink().click()
+    this.elements.previousPageBtn().click()
   }
 }
 

@@ -67,6 +67,20 @@ class homePage {
     },
   }
 
+  // todo
+  // doesUrlContain(value) {
+  //   cy.url().should('include', value)
+  // }
+  clickOnMenuLink(link) {
+    cy.get('nav').contains(link).click()
+  }
+  clickOnSubmenuLink(link) {
+    cy.get('[role="menuitem"]')
+      .contains(link)
+      .invoke('removeAttr', 'target')
+      .click()
+  }
+
   //! clickers
   clickOnSignUpBtn() {
     this.elements.signUpBtn().click()

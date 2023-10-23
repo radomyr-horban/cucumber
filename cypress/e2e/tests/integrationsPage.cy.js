@@ -26,11 +26,11 @@ describe('Integrations page', function () {
       .and('have.text', 'Add Telnyx products to your favorite software')
 
     integrationsPage.elements
-      .integrationsSectionTitle()
+      .integrationsFilterName()
       .should('be.visible')
       .and('have.text', 'Integrations')
     integrationsPage.elements
-      .categoriesSectionTitle()
+      .categoriesFilterName()
       .should('be.visible')
       .and('have.text', 'Categories')
 

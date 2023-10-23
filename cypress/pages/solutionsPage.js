@@ -7,7 +7,7 @@ class solutionsPage {
     seeUseCasesLink: () => cy.get('a[title="See use cases"]'),
 
     useCasesSectionStrongText: () => cy.get('section[id="use-cases"] strong'),
-    useCasesSectionHeading: () => cy.get('section[id="use-cases"] h2'),
+    sectionHeading: () => cy.get('section[id="use-cases"] h2'),
 
     filterDropdownBtn: () => cy.get('button[id="department-filter"]'),
     filterDropdownList: () => cy.get('div[role="listbox"]'),

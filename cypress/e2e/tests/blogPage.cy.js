@@ -22,7 +22,7 @@ describe('Blog page', () => {
 
     blogPage.elements.searchInput().should('be.visible')
     blogPage.elements
-      .articlesSectionHeading()
+      .sectionHeading()
       .should('be.visible')
       .and('contain', 'View all articles')
 
@@ -44,7 +44,7 @@ describe('Blog page', () => {
 
     blogPage.elements.searchInput().should('be.visible')
     blogPage.elements
-      .articlesSectionHeading()
+      .sectionHeading()
       .should('be.visible')
       .and('contain', 'View all articles')
 
@@ -53,6 +53,6 @@ describe('Blog page', () => {
 
     cy.url().should('include', '/page/2')
 
-    blogPage.elements.articlesSectionHeading().should('contain', '(2)')
+    blogPage.elements.sectionHeading().should('contain', '(2)')
   })
 })

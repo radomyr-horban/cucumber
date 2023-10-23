@@ -10,6 +10,7 @@ const {
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://telnyx.com',
+
     specPattern: '**/*.feature',
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config)

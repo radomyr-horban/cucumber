@@ -37,7 +37,7 @@ describe('Solutions page', () => {
       .should('be.visible')
 
     solutionsPage.elements
-      .useCasesSectionHeading()
+      .sectionHeading()
       .should('be.visible')
       .and('have.text', 'Maintain control with custom, feature-rich tooling.')
 

@@ -5,7 +5,7 @@ class integrationsPage {
 
     integrationsSection: () =>
       cy.get('div[class="sidebar-section collection-menu-section"]'),
-    integrationsSectionTitle: () =>
+    integrationsFilterName: () =>
       cy.get('div[class="sidebar-section collection-menu-section"] > h4'),
     integrationsSectionListItems: () =>
       cy.get(
@@ -14,7 +14,7 @@ class integrationsPage {
 
     categoriesSection: () =>
       cy.get('div[class="sidebar-section category-menu-section"]'),
-    categoriesSectionTitle: () =>
+    categoriesFilterName: () =>
       cy.get('div[class="sidebar-section category-menu-section"] > h4'),
     categoriesSectionListItems: () =>
       cy.get('div[class="sidebar-section category-menu-section"] > ul > li a'),

@@ -51,11 +51,11 @@ describe('Release Notes page', () => {
 
     releaseNotesPage.elements.currentPageNumber().should('contain', '1')
 
-    releaseNotesPage.clickOnNextPageLink()
+    releaseNotesPage.clickOnnextPageBtn()
     cy.url().should('include', '/page/2')
     releaseNotesPage.elements.currentPageNumber().should('contain', '2')
 
-    releaseNotesPage.clickOnPreviousPageLink()
+    releaseNotesPage.clickOnpreviousPageBtn()
     cy.url().should('include', '/page/1')
     releaseNotesPage.elements.currentPageNumber().should('contain', '1')
   })

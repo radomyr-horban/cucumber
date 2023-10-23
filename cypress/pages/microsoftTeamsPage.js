@@ -13,7 +13,7 @@ class microsoftTeamsPage {
     getStartedLink: () =>
       cy.get('a[href="/sign-up"]>span').contains('Get started'),
 
-    formSectionHeading: () =>
+    sectionHeading: () =>
       cy
         .get('section > div > h2')
         .contains('Interested in learning more about Operator Connect?'),

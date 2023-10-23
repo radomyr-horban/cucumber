@@ -24,7 +24,7 @@ describe('IoT Sim Cards page', () => {
     IoTSimCardsPage.elements.viewGlobalCoverageBtn().should('be.visible')
 
     //! Calculator Section
-    IoTSimCardsPage.elements.calculatorSectionHeading().should('be.visible')
+    IoTSimCardsPage.elements.sectionHeading().should('be.visible')
     IoTSimCardsPage.elements.calculatorSectionQuiz().should('be.visible')
 
     //! Quiz
