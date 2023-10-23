@@ -33,11 +33,11 @@ class releaseNotesPage {
   }
 
   //! pagination
-  clickOnnextPageBtn() {
+  clickOnNextPageBtn() {
     this.elements.nextPageBtnTitle().should('have.text', 'Go to next page')
     this.elements.nextPageBtn().click()
   }
-  clickOnpreviousPageBtn() {
+  clickOnPreviousPageBtn() {
     this.elements
       .previousPageBtnTitle()
       .should('have.text', 'Go to previous page')

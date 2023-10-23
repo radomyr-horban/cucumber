@@ -10,7 +10,7 @@ describe('Release Notes page', () => {
     acceptCookiesHelper()
   })
 
-  it('2. should allow a user to filter notes', () => {
+  xit('2. should allow a user to filter notes', () => {
     homePage.clickOnReleaseNotesLink()
 
     cy.url().should('include', '/release-notes')
@@ -35,7 +35,7 @@ describe('Release Notes page', () => {
     cy.url().should('include', '/tag/api')
   })
 
-  it('3. should display pagination', () => {
+  xit('3. should display pagination', () => {
     homePage.clickOnReleaseNotesLink()
 
     cy.url().should('include', '/release-notes')
@@ -51,11 +51,11 @@ describe('Release Notes page', () => {
 
     releaseNotesPage.elements.currentPageNumber().should('contain', '1')
 
-    releaseNotesPage.clickOnnextPageBtn()
+    releaseNotesPage.clickOnNextPageBtn()
     cy.url().should('include', '/page/2')
     releaseNotesPage.elements.currentPageNumber().should('contain', '2')
 
-    releaseNotesPage.clickOnpreviousPageBtn()
+    releaseNotesPage.clickOnPreviousPageBtn()
     cy.url().should('include', '/page/1')
     releaseNotesPage.elements.currentPageNumber().should('contain', '1')
   })

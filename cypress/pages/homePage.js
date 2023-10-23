@@ -68,12 +68,16 @@ class homePage {
   }
 
   // todo
-  // doesUrlContain(value) {
-  //   cy.url().should('include', value)
-  // }
   clickOnMenuLink(link) {
     cy.get('nav').contains(link).click()
   }
+
+  //!
+  clickOnFooterLink(link) {
+    cy.get('footer').contains(link).click()
+  }
+  //!
+
   isSubmenuLinkVisible(link) {
     cy.get('[role="menuitem"]').contains(link).should('be.visible')
   }

@@ -56,9 +56,9 @@ When('I click on the {string} link in the opened dropdown menu', (link) => {
 })
 
 // footer
-// When('I click on the {string} link in the footer', (link) => {
-//   homePage.clickOnMenuLink(link)
-// })
+When('I click on the {string} link in the footer', (link) => {
+  homePage.clickOnFooterLink(link)
+})
 
 //! common for all pages
 
