@@ -35,15 +35,4 @@ Feature: Numbers Pricing page
     When I select the “EUR” option
     Then The selected value of “Currency” dropdown list is “EUR”
     And The `€` sign is displayed in the “Number pricing” section
-
-
-
-
-    
-
-    
- 
-    
-
-  
  
