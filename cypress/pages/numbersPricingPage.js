@@ -21,10 +21,10 @@ class numbersPricingPage {
 
     numberPricingTableData: () => cy.get('table[id="Number-pricing"] td'),
 
-    countryFilterDropdownList: () =>
-      cy.get('button[id="country-filter"] + div'),
-    currencyFilterDropdownList: () =>
-      cy.get('button[id="currency-filter"] + div'),
+    // countryFilterDropdownList: () =>
+    //   cy.get('button[id="country-filter"] + div'),
+    // currencyFilterDropdownList: () =>
+    //   cy.get('button[id="currency-filter"] + div'),
   }
 
   clickOnPayAsYouGoBoxLink() {

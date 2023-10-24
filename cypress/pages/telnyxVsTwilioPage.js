@@ -5,8 +5,7 @@ class telnyxVsTwilioPage {
       cy.get('a[href="/contact-us"]').contains('Talk to an expert').first(),
 
     //! Calculator Section
-    savingsCalculatorHeading: () =>
-      cy.get('section[id="savings-calculator"] h2'),
+    sectionHeading: () => cy.get('section[id="savings-calculator"] h2'),
 
     savingsCalculatorQuiz: () =>
       cy.get('section[id="savings-calculator"] > div > div').last(),

@@ -11,7 +11,7 @@ Feature: Telnyx vs Twilio page
     And The “Talk to an Expert” button is displayed on the "telnyxVsTwilioPage"
 
     #! Calculator 
-    Then The "How much will you save switching from Twilio?" heading is displayed on the "telnyxVsTwilioPage"
+    Then The "How much will you save switching from Twilio?" section heading is displayed on the "telnyxVsTwilioPage"
     And The “SAVINGS CALCULATOR” quiz is displayed on the page
     And The current question number is equal to "1"
    
@@ -29,19 +29,11 @@ Feature: Telnyx vs Twilio page
     And The "backBtn" button is displayed in the question box on the "telnyxVsTwilioPage"
 
     When I select the first option in the "receiveMessagesOption" question on the "telnyxVsTwilioPage" 
-    And The "nextBtn" button is displayed in the question box on the "telnyxVsTwilioPage"
-    When I click on the "Calculate savings" button on the "telnyxVsTwilioPage"
+    And The "calculateSavingsBtn" button is displayed in the question box on the "telnyxVsTwilioPage"
+    When I click on the "calculateSavingsBtn" button on the "telnyxVsTwilioPage"
 
     Then The current question number is increased by one on the "telnyxVsTwilioPage"
-    And The "Compare costs per month" heading is displayed on the page
+    And The "Compare costs per month" quiz result heading is displayed on the page
     And The “TWILIO” and “TELNYX” words are displayed on the page
     And The “SAVINGS PER MONTH” text is displayed on the page
-    And The "Talk to an expert" button is displayed in the question box on the "telnyxVsTwilioPage"
-
-
-    
- 
-    
-
-  
- 
+    And The "talkToExpertBtn" button is displayed in the question box on the "telnyxVsTwilioPage"

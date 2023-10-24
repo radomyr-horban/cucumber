@@ -13,6 +13,12 @@ Then('The “SAVINGS CALCULATOR” quiz is displayed on the page', () => {
 Then('The current question number is equal to "1"', () => {
   telnyxVsTwilioPage.elements.currentQuestionNumber().should('equal', '1')
 })
+Then(
+  'The "Compare costs per month" quiz result heading is displayed on the page',
+  () => {
+    telnyxVsTwilioPage.elements.quizResultHeading().should('be.visible')
+  }
+)
 
 Then('The “TWILIO” and “TELNYX” words are displayed on the page', () => {
   telnyxVsTwilioPage.elements.quizResultTwilio().should('be.visible')

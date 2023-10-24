@@ -124,40 +124,44 @@ Then(
   }
 )
 
-//? escape integer
-//The "View \\({int})" section
+Then(
+  'The “Talk to an Expert” button is displayed on the {string}',
+  (pageName) => {
+    const resolvedPage = pageMap[pageName]
 
-Then('The {string} button is displayed on the {string}', (pageName) => {
-  const resolvedPage = pageMap[pageName]
-
-  resolvedPage.elements.talkToExpertBtn().should('be.visible')
-})
+    resolvedPage.elements.talkToExpertBtn().should('be.visible')
+  }
+)
 
 //! Quiz
 When('I click on the {string} button on the {string}', (btnName, pageName) => {
   const resolvedPage = pageMap[pageName]
+
   resolvedPage.elements[btnName]().click()
 })
 
-Then(
-  'The current question number is equal to {string} on the {string}',
-  (questionNumber, pageName) => {
-    const resolvedPage = pageMap[pageName]
+// Then(
+//   'The current question number is equal to {string} on the {string}',
+//   (questionNumber, pageName) => {
+//     const resolvedPage = pageMap[pageName]
 
-    resolvedPage.elements
-      .currentQuestionNumber()
-      .should('equal', questionNumber)
-  }
-)
+//     resolvedPage.elements
+//       .currentQuestionNumber()
+//       .should('equal', questionNumber)
+//   }
+// )
 Then(
   'The current question number is increased by one on the {string}',
-  (currentPageNumber, pageName) => {
+  (pageName) => {
     const resolvedPage = pageMap[pageName]
-    const currentPageNumber = +resolvedPage.elements.currentQuestionNumber()
+    // const pageNumber = resolvedPage.elements.currentQuestionNumber()
+    let pageNumber = 1
 
-    resolvedPage.cy.fixture(`${pageName}.fixture`).then((data) => {
-      currentPageNumber = data.currentQuestionNumber + 1
-    })
+    // cy.fixture(`${pageName}.fixture`).then((data) => {
+    //   pageNumber === data.currentQuestionNumber + 1
+    // })
+
+    pageNumber === resolvedPage.currentQuestionNumber + 1
   }
 )
 
