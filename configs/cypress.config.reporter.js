@@ -8,7 +8,7 @@ const {
 } = require('@badeball/cypress-cucumber-preprocessor/esbuild')
 
 module.exports = defineConfig({
-  projectId: '31drtk',
+  projectId: 'wqipz1',
 
   e2e: {
     baseUrl: 'https://telnyx.com',
