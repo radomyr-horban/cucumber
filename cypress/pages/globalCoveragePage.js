@@ -48,7 +48,6 @@ class globalCoveragePage {
     this.elements.emailInput().type(value)
   }
 
-  //todo: How to optimize this code for every form???
   fillForm(userData) {
     this.clickOnFirstNameInput()
     this.setFirstNameInput(userData.firstName)

@@ -40,14 +40,6 @@ class microsoftTeamsPage {
     errorAlert: () => cy.get('div.mktoError'),
   }
 
-  // isErrorAlertDisplayed(inputName) {
-  //   // const inputId = inputName.invoke('attr', 'id')
-  //   const inputId = this.elements[inputName]().invoke('attr', 'id')
-
-  //   return inputId.then((id) => {
-  //     return cy.get(`input[id="${id}"]+div.mktoError`).should('be.visible')
-  //   })
-  // }
   setInput(inputName, value) {
     this.elements[inputName]().clear()
     this.elements[inputName]().type(value)
@@ -85,7 +77,7 @@ class microsoftTeamsPage {
 
   setEmailInput(value) {
     this.elements.emailInput().clear()
-    this.elements.emailInput().type(value) //! remove old results
+    this.elements.emailInput().type(value)
   }
 
   setCompanyWebsiteInput(value) {

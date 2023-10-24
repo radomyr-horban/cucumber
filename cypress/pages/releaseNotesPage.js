@@ -8,7 +8,6 @@ class releaseNotesPage {
     featureRequestLink: () => cy.get('main a').contains('Feature Request'),
     followUsOnTwitterLink: () =>
       cy.get('main a').contains('Follow us on Twitter'),
-    // filterDropdownList: () => cy.get('div[role="listbox"]'),
 
     //! pagination
     paginationNav: () => cy.get('nav[aria-label="pagination"]'),

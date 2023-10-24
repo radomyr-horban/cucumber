@@ -12,7 +12,7 @@ Feature: Microsoft Teams page
     Then The "/products/enterprise-integrations-ms-teams" text is displayed in the URL
     And The "Microsoft Teams" heading is displayed on the "microsoftTeamsPage"
     And The description text is displayed under the heading on the "microsoftTeamsPage"
-    And The “Talk to an expert” button is displayed on the page
+    And The “Talk to an Expert” button is displayed on the "microsoftTeamsPage"
     And The “Get started” link is displayed below the button
 
     And The "Interested in learning more about Operator Connect?" section heading is displayed on the "microsoftTeamsPage"
@@ -32,7 +32,7 @@ Feature: Microsoft Teams page
     Then The "/products/enterprise-integrations-ms-teams" text is displayed in the URL
     And The "Microsoft Teams" heading is displayed on the "microsoftTeamsPage"
     And The description text is displayed under the heading on the "microsoftTeamsPage"
-    And The “Talk to an expert” button is displayed on the page
+    And The “Talk to an Expert” button is displayed on the "microsoftTeamsPage"
     And The “Get started” link is displayed below the button
 
     And The "Interested in learning more about Operator Connect?" section heading is displayed on the "microsoftTeamsPage"
@@ -60,9 +60,3 @@ Feature: Microsoft Teams page
     And I select the operator input field
     When I click on the “APPLY NOW” button
     Then An error message is displayed under the "emailInput" input field on the "microsoftTeamsPage"
-
-   
-
-  
-   
-

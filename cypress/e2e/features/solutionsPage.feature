@@ -15,16 +15,8 @@ Feature: Solutions page
     Then The “USE CASES” section title is visible on the page
     Then The "#use-cases" text is displayed in the URL
     
-    #!
     Then The "Maintain control with custom, feature-rich tooling." section heading is displayed on the "solutionsPage"
     Then The “Filter by department” dropdown is displayed on the page
 
     When I click on the “Filter by department” dropdown
     Then The names of all departments are displayed in the dropdown list
-
-    
- 
-    
-
-  
- 

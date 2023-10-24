@@ -22,4 +22,3 @@ Feature: Blog article page
     And The article title is displayed on the page
     And The article author name is displayed below the article title
     And The “SHARE ON SOCIAL” text is displayed under the article
-

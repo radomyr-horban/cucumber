@@ -61,22 +61,18 @@ class homePage {
       footerLogo: () => cy.get('footer svg > g'),
       releaseNotesLink: () => cy.get('footer a[href="/release-notes"]'),
 
-      // reportAbuseLink: () => cy.get('footer a[href="/report-abuse"]'),
       telnyxVsTwilioLink: () =>
         cy.get('footer a[href="/the-better-twilio-alternative"]'),
     },
   }
 
-  // todo
   clickOnMenuLink(link) {
     cy.get('nav').contains(link).click()
   }
 
-  //!
   clickOnFooterLink(link) {
     cy.get('footer').contains(link).click()
   }
-  //!
 
   isSubmenuLinkVisible(link) {
     cy.get('[role="menuitem"]').contains(link).should('be.visible')
@@ -123,11 +119,6 @@ class homePage {
     this.elements.footer.releaseNotesLink().should('be.visible')
     this.elements.footer.releaseNotesLink().click()
   }
-
-  // clickOnReportAbuseLink() {
-  //   this.elements.footer.reportAbuseLink().should('be.visible')
-  //   this.elements.footer.reportAbuseLink().click()
-  // }
 
   clickOnTelnyxVsTwilioLink() {
     this.elements.footer.telnyxVsTwilioLink().should('be.visible')

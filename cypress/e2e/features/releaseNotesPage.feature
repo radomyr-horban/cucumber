@@ -29,9 +29,3 @@ Feature: Release Notes page
 
     When I select the “API” option
     Then The "/tag/api" text is displayed in the URL
-    
- 
-    
-
-  
- 

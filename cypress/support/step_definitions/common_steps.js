@@ -3,7 +3,6 @@ import { When, Then, Given } from '@badeball/cypress-cucumber-preprocessor'
 import { acceptCookiesHelper } from '../../helpers/acceptCookies.helper'
 import { generateUserData } from '../../helpers/generateUserData.helper'
 
-// import blogArticlePage from '../../pages/blogArticlePage'
 import blogPage from '../../pages/blogPage'
 import globalCoveragePage from '../../pages/globalCoveragePage'
 import homePage from '../../pages/homePage'
@@ -18,7 +17,6 @@ import telnyxVsTwilioPage from '../../pages/telnyxVsTwilioPage'
 import IoTSimCardsPage from '../../pages/IoTSimCardsPage'
 
 const pageMap = {
-  // blogArticlePage: blogArticlePage,
   blogPage: blogPage,
   globalCoveragePage: globalCoveragePage,
   homePage: homePage,
@@ -61,7 +59,6 @@ When('I click on the {string} link in the footer', (link) => {
 })
 
 //! common for all pages
-
 // heading
 Then(
   'The {string} heading is displayed on the {string}',
@@ -99,8 +96,6 @@ Then(
     } else {
       throw new Error(`Page '${pageName}' not found.`)
     }
-
-    // microsoftTeamsPage.elements.heroOverviewText().should('be.visible')
   }
 )
 
@@ -140,26 +135,11 @@ When('I click on the {string} button on the {string}', (btnName, pageName) => {
   resolvedPage.elements[btnName]().click()
 })
 
-// Then(
-//   'The current question number is equal to {string} on the {string}',
-//   (questionNumber, pageName) => {
-//     const resolvedPage = pageMap[pageName]
-
-//     resolvedPage.elements
-//       .currentQuestionNumber()
-//       .should('equal', questionNumber)
-//   }
-// )
 Then(
   'The current question number is increased by one on the {string}',
   (pageName) => {
     const resolvedPage = pageMap[pageName]
-    // const pageNumber = resolvedPage.elements.currentQuestionNumber()
     let pageNumber = 1
-
-    // cy.fixture(`${pageName}.fixture`).then((data) => {
-    //   pageNumber === data.currentQuestionNumber + 1
-    // })
 
     pageNumber === resolvedPage.currentQuestionNumber + 1
   }

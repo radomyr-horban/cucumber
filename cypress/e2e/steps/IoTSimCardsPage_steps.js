@@ -1,4 +1,4 @@
-import { When, Then, Before } from '@badeball/cypress-cucumber-preprocessor'
+import { When, Then } from '@badeball/cypress-cucumber-preprocessor'
 
 import IoTSimCardsPage from '../../pages/IoTSimCardsPage'
 

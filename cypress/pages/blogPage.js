@@ -1,12 +1,6 @@
 class blogPage {
   elements = {
     heading: () => cy.get('main h1'),
-    // subHeading: () => cy.get('header h2 > span'),
-    // filterDropdown: () => cy.get('#blog-filter'),
-    // filterDropdownList: () => cy.get('div[role="listbox"]'),
-    // filterDropdownListOptions: () => cy.get('div[role="option"] a'),
-
-    //todo
     searchInput: () => cy.get('input[id="search"]'),
     sectionHeading: () => cy.get('#articles h2'),
 
@@ -17,7 +11,6 @@ class blogPage {
 
     paginationNav: () => cy.get('nav[aria-label="pagination"]'),
     nextPageBtn: () => cy.get('svg[aria-describedby="go-to-next-page"]'),
-    //todo: nextPageBtnTitle: () => cy.get('title[id="go-to-next-page"]'),
 
     //! article
     // firstArticle: () => cy.get('#articles ul li a').first(),

@@ -1,10 +1,6 @@
-import { When, Then, Before } from '@badeball/cypress-cucumber-preprocessor'
+import { Then } from '@badeball/cypress-cucumber-preprocessor'
 
 import telnyxVsTwilioPage from '../../pages/telnyxVsTwilioPage'
-
-// Before(function () {
-//   cy.fixture('telnyxVsTwilioPage.fixture').as('currentQuestionNumber')
-// })
 
 Then('The “SAVINGS CALCULATOR” quiz is displayed on the page', () => {
   telnyxVsTwilioPage.elements.savingsCalculatorQuiz().should('be.visible')

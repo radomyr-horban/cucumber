@@ -1,4 +1,4 @@
-import { When, Then, Before } from '@badeball/cypress-cucumber-preprocessor'
+import { Then, Before } from '@badeball/cypress-cucumber-preprocessor'
 
 import integrationsPage from '../../pages/integrationsPage'
 

@@ -32,7 +32,6 @@ Feature: Global Coverage page
     And The “View full coverage” link is displayed below the button
     And The “Download full coverage” form is displayed on the page
 
-    # !
     When I click on the “Submit” button
     Then An error message is displayed under the "firstNameInput" input field on the "globalCoveragePage"
    
@@ -51,4 +50,3 @@ Feature: Global Coverage page
     When I set the "emailInput" input field with "tom@holland"
     And I click on the “Submit” button
     Then An error message is displayed under the "emailInput" input field on the "globalCoveragePage"
- 

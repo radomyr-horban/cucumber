@@ -19,7 +19,6 @@ Feature: IoT Sim Cards page
     And The current question number is equal to "1"
    
     #! Quiz    
-    #todo
     When I answer the first question
     Then The "nextBtn" button is displayed in the question box on the "IoTSimCardsPage"
     When I click on the "nextBtn" button on the "IoTSimCardsPage"
@@ -27,7 +26,6 @@ Feature: IoT Sim Cards page
     #! 2 
     Then The current question number is increased by one on the "IoTSimCardsPage"
     And The "backBtn" button is displayed in the question box on the "IoTSimCardsPage"
-    #todo
     When I answer the second question
     Then The "nextBtn" button is displayed in the question box on the "IoTSimCardsPage"
     When I click on the "nextBtn" button on the "IoTSimCardsPage"
@@ -35,7 +33,6 @@ Feature: IoT Sim Cards page
     #! 3
     Then The current question number is increased by one on the "IoTSimCardsPage"
     And The "backBtn" button is displayed in the question box on the "IoTSimCardsPage"
-    #todo
     When I answer the third question
     Then The "nextBtn" button is displayed in the question box on the "IoTSimCardsPage"
     When I click on the "nextBtn" button on the "IoTSimCardsPage"
@@ -43,11 +40,9 @@ Feature: IoT Sim Cards page
     #!4
     Then The current question number is increased by one on the "IoTSimCardsPage"
     And The "backBtn" button is displayed in the question box on the "IoTSimCardsPage"
-    #todo
     When I answer the forth question
     Then The "nextBtn" button is displayed in the question box on the "IoTSimCardsPage"
     When I click on the "nextBtn" button on the "IoTSimCardsPage"
-
 
     #!5 
     Then The current question number is increased by one on the "IoTSimCardsPage"
