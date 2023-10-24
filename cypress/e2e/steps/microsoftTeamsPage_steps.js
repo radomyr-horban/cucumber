@@ -9,9 +9,11 @@ import thankYouPage from '../../pages/thankYouPage'
 // Then('The description text is displayed under the heading', () => {
 //   microsoftTeamsPage.elements.heroOverviewText().should('be.visible')
 // })
-Then('The “Talk to an expert” button is displayed on the page', () => {
-  microsoftTeamsPage.elements.talkToExpertBtn().should('be.visible')
-})
+// todo
+// Then('The “Talk to an expert” button is displayed on the page', () => {
+//   microsoftTeamsPage.elements.talkToExpertBtn().should('be.visible')
+// })
+
 Then('The “Get started” link is displayed below the button', () => {
   microsoftTeamsPage.elements.getStartedLink().should('be.visible')
 })

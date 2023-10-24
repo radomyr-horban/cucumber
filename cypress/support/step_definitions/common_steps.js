@@ -126,3 +126,55 @@ Then(
 
 //? escape integer
 //The "View \\({int})" section
+
+Then('The {string} button is displayed on the {string}', (pageName) => {
+  const resolvedPage = pageMap[pageName]
+
+  resolvedPage.elements.talkToExpertBtn().should('be.visible')
+})
+
+//! Quiz
+When('I click on the {string} button on the {string}', (btnName, pageName) => {
+  const resolvedPage = pageMap[pageName]
+  resolvedPage.elements[btnName]().click()
+})
+
+Then(
+  'The current question number is equal to {string} on the {string}',
+  (questionNumber, pageName) => {
+    const resolvedPage = pageMap[pageName]
+
+    resolvedPage.elements
+      .currentQuestionNumber()
+      .should('equal', questionNumber)
+  }
+)
+Then(
+  'The current question number is increased by one on the {string}',
+  (currentPageNumber, pageName) => {
+    const resolvedPage = pageMap[pageName]
+    const currentPageNumber = +resolvedPage.elements.currentQuestionNumber()
+
+    resolvedPage.cy.fixture(`${pageName}.fixture`).then((data) => {
+      currentPageNumber = data.currentQuestionNumber + 1
+    })
+  }
+)
+
+Then(
+  'The {string} button is displayed in the question box on the {string}',
+  (btnName, pageName) => {
+    const resolvedPage = pageMap[pageName]
+
+    resolvedPage.elements[btnName]().should('be.visible')
+  }
+)
+
+When(
+  'I select the first option in the {string} question on the {string}',
+  (questionName, pageName) => {
+    const resolvedPage = pageMap[pageName]
+
+    resolvedPage.elements[questionName]().click()
+  }
+)
